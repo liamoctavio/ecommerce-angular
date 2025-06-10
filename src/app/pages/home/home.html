@@ -1,0 +1,11 @@
+<div style="text-align: center; margin-top: 60px;">
+  <h1>Bienvenido</h1>
+  <p *ngIf="username">Has iniciado sesión como: <strong>{{ username }}</strong></p>
+
+  <button (click)="logout()">Cerrar sesión</button>
+</div>
+
+
+<div *ngIf="backendMessage">
+  <p><strong>Mensaje del backend:</strong> {{ backendMessage }}</p>
+</div>
