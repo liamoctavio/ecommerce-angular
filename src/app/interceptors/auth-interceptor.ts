@@ -11,31 +11,6 @@ import { mergeMap } from 'rxjs/operators';
 import { MsalService } from '@azure/msal-angular';
 import { InteractionType, SilentRequest } from '@azure/msal-browser';
 
-// export const authInterceptor: HttpInterceptorFn = (req, next) => {
-//   return next(req);
-// };
-
-
-// @Injectable()
-// export class AuthInterceptor implements HttpInterceptor {
-//   intercept(
-//     req: HttpRequest<any>,
-//     next: HttpHandler
-//   ): Observable<HttpEvent<any>> {
-//     const token = localStorage.getItem('access_token'); // Token guardado tras login
-
-//     if (token) {
-//       const authReq = req.clone({
-//         setHeaders: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       });
-//       return next.handle(authReq);
-//     }
-
-//     return next.handle(req);
-//   }
-// }
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

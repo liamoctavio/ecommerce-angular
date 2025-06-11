@@ -23,7 +23,7 @@ export class Home {
     this.username = account ? account.username : null;
 
      // Llamada al backend
-    this.http.get('http://localhost:8080/api/test', { responseType: 'text' })
+    this.http.get('http://54.167.8.207:8080/api/test', { responseType: 'text' })
       .subscribe({
         next: (res) => {
           console.log('Respuesta backend:', res);
