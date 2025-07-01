@@ -1,0 +1,24 @@
+<div class="container my-4">
+  <h3>Listado de promociones</h3>
+
+  <!-- <button class="btn btn-outline-secondary mb-3" (click)="descargarJson()">Descargar archivo JSON</button> -->
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let promo of promociones">
+        <td>{{ promo.id }}</td>
+        <td>{{ promo.descripcion }}</td>
+        <td>{{ promo.fechaInicio | date }}</td>
+        <td>{{ promo.fechaFin | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

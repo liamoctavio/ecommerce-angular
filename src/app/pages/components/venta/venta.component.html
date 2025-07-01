@@ -1,0 +1,21 @@
+<div class="container my-4">
+  <h3>Listado de ventas</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of ventas">
+        <td>{{ v.id }}</td>
+        <td>{{ v.producto }}</td>
+        <td>{{ v.cantidad }}</td>
+        <td>{{ v.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<div class="container my-4">
+  <h3>Crear nueva promoción</h3>
+  <form (ngSubmit)="crearPromocion()">
+    <div class="mb-3">
+      <label>Descripción</label>
+      <input [(ngModel)]="promocion.descripcion" name="descripcion" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Fecha Inicio</label>
+      <input [(ngModel)]="promocion.fechaInicio" name="fechaInicio" type="date" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Fecha Fin</label>
+      <input [(ngModel)]="promocion.fechaFin" name="fechaFin" type="date" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Promoción</button>
+  </form>
+</div>

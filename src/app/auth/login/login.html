@@ -1,7 +1,0 @@
-<div style="text-align: center; margin-top: 50px;">
-  <h2>Iniciar sesión con Azure AD B2C</h2>
-  <button (click)="login()">Iniciar sesión</button>
-  <button *ngIf="isLoggedIn()" (click)="logout()">Cerrar sesión</button>
-
-  <p *ngIf="isLoggedIn()">Bienvenido, {{ getUsername() }}</p>
-</div>

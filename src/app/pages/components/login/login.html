@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <div class="row justify-content-center align-items-center g-5">
+    <div class="col-md-6 d-none d-md-block">
+      <img src="assets/img/vertical.jpg" alt="Imagen de Inicio de Sesión" class="img-fluid rounded" />
+    </div>
+    <div class="col-md-5">
+      <div class="card p-4 shadow">
+        <h3 class="text-center mb-3">Iniciar sesión con Azure AD B2C</h3>
+        <button class="btn btn-primary w-100" (click)="login()">Iniciar sesión</button>
+        <button class="btn btn-danger w-100" *ngIf="isLoggedIn()" (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p *ngIf="isLoggedIn()">Bienvenido, {{ getUsername() }}</p>

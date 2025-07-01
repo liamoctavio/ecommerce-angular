@@ -44,12 +44,13 @@ import { App } from './app';
 
 import { MsalModule, MsalService, MsalRedirectComponent, MsalInterceptorConfiguration } from '@azure/msal-angular';
 import { PublicClientApplication, InteractionType } from '@azure/msal-browser';
-import { Login } from './auth/login/login';
 import { MsalInit } from './services/msal-init';
-import { Home } from './pages/home/home';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { Login } from './pages/components/login/login';
+import { Home } from './pages/components/shared/home/home';
+import { NavbarComponent } from './pages/components/shared/navbar/navbar.component';
 
 export function initializeMsal(msalInitService: MsalInit): () => Promise<void> {
   return () => msalInitService.initialize();
@@ -58,7 +59,7 @@ export function initializeMsal(msalInitService: MsalInit): () => Promise<void> {
 const msalInstance = new PublicClientApplication({
   auth: {
     clientId: '2b2c5b78-e1fc-41e6-88e1-20d591febee0',
-    redirectUri: 'http://localhost:4200'
+    redirectUri: 'http://localhost:4200/home'
   }
 });
 
@@ -66,7 +67,8 @@ const msalInstance = new PublicClientApplication({
   declarations: [
     App,
     Login,
-    Home
+    Home,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

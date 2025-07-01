@@ -1,0 +1,18 @@
+<div class="container my-4">
+  <h3>Registrar nueva venta</h3>
+  <form (ngSubmit)="registrarVenta()">
+    <div class="mb-3">
+      <label>Producto</label>
+      <input [(ngModel)]="venta.producto" name="producto" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Cantidad</label>
+      <input [(ngModel)]="venta.cantidad" name="cantidad" class="form-control" type="number" required />
+    </div>
+    <div class="mb-3">
+      <label>Total</label>
+      <input [(ngModel)]="venta.total" name="total" class="form-control" type="number" required />
+    </div>
+    <button class="btn btn-success" type="submit">Registrar Venta</button>
+  </form>
+</div>
