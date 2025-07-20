@@ -15,9 +15,9 @@ export class VentaComponent implements OnInit {
   constructor(private ventaService: VentaService) {}
 
   ngOnInit(): void {
-    this.ventaService.getVentas().subscribe({
-      next: (data: any) => (this.ventas = data),
-      error: () => alert('Error al cargar ventas'),
-    });
+    // this.ventaService.getVentas().subscribe({
+    //   next: (data: any) => (this.ventas = data),
+    //   error: () => alert('Error al cargar ventas'),
+    // });
   }
 }

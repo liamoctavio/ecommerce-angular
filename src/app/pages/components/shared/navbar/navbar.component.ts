@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
-
+import { MsalService } from '@azure/msal-angular';
+import { AccountInfo } from '@azure/msal-browser';
 
 @Component({
   selector: 'app-navbar',
   standalone: false,
-  templateUrl: './navbar.component.html',
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
-  constructor() {}
+  constructor(private msalService: MsalService) {}
 
-  isLoggedIn() {
-    return true;
+  isLoggedIn(): boolean {
+    return this.msalService.instance.getActiveAccount() !== null;
   }
 
-  getUsername() {
-    
+  getUsername(): string {
+    const account: AccountInfo | null = this.msalService.instance.getActiveAccount();
+    return account?.username || '';
   }
 
-  logout() {
-   
+  logout(): void {
+    this.msalService.logoutRedirect();
   }
 }

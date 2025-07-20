@@ -16,7 +16,7 @@ export class PromocionComponent implements OnInit {
   constructor(private promocionService: PromocionService) {}
 
   ngOnInit(): void {
-    this.promocionService.getPromociones().subscribe({
+    this.promocionService.getPromocionesActivas().subscribe({
       next: (data: any) => {
         this.promociones = data.promociones ?? data;
         this.jsonUrl = data.jsonUrl ?? ''; // si el backend entrega una URL
